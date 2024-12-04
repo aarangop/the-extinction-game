@@ -3,3 +3,6 @@ matplotlib
 ipython
 jupyter
 seaborn
+tables
+llama-cpp-python
+openpyxl
