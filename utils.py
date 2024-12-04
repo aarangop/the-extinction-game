@@ -46,7 +46,7 @@ class RiskEstimateProcessor:
             "confidence": string
         }}
         """
-
+        result_text = None
         try:
             response = self.llm(
                 prompt,
@@ -135,24 +135,3 @@ class RiskEstimateProcessor:
 
         df['validation_notes'] = df.apply(validate_row, axis=1)
         return df
-
-
-# Example usage:
-if __name__ == "__main__":
-    # Initialize processor
-    processor = RiskEstimateProcessor("path/to/your/llama/model.gguf")
-
-    # Load data
-    df = pd.read_csv('pre-processed_data.csv')
-
-    # Process estimates
-    processed_df = processor.process_dataset(df)
-
-    # Validate results
-    validated_df = processor.validate_estimates(processed_df)
-
-    # Basic analysis
-    summary = validated_df.groupby('risk_category').agg({
-        'century_probability': ['mean', 'median', 'std', 'count'],
-        'conversion_confidence': lambda x: (x == 'high').mean()
-    })
