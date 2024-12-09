@@ -1,0 +1,9 @@
+estimator,estimation_measure,date,estimation,source_read_by_estimator,risk_category,other_notes,source,estimation_numeric
+Toby Ord,Existential catastrophe from supervolcanic eruption by 2120,2020,"~0.01% (~1 in 10,000)",Yes,natural_risks,,The Precipice,
+Pamlin & Armstrong,"""Infinite impact"" from a super-volcano within the next 100 years, which ""refers to the state where civilization collapses and does not recover, or a situation where all human life ends"" (according to Beard et al.)",2015,3e-07,No,natural_risks,,"Pamlin, D. & Armstrong, S. (2015). Global Challenges: 12 Risks that Threaten Human Civilisation, Global Challenges Foundation.   ",3e-07
+Toby Ord,Existential catastrophe from asteroid or comet impact by 2120,2020,"~0.0001% (~1 in 1,000,000)",Yes,natural_risks,,The Precipice,
+Pamlin & Armstrong,"""Infinite impact"" from ""a major asteroid impact"" within the next 100 years, which ""refers to the state where civilization collapses and does not recover, or a situation where all human life ends"" (according to Beard et al.)",2015,1.3e-06,No,natural_risks,,"Pamlin, D. & Armstrong, S. (2015). Global Challenges: 12 Risks that Threaten Human Civilisation, Global Challenges Foundation.   ",1.3e-06
+Toby Ord,Existential catastrophe from stellar explosion by 2120,2020,"~0.0000001% (~1 in 1,000,000,000)",Yes,natural_risks,,The Precipice,
+Toby Ord,“Total natural [existential] risk” by 2120,2020,"~0.01% (~1 in 10,000)",Yes,natural_risks,,The Precipice,
+"Snyder-Beattie, Ord, & Bonsall","The probability that humanity goes extinct from natural causes in any given year, using only the information that Homo sapiens has existed at least 200,000 years.",2019,"Almost guaranteed to be below 0.007% (1 in 14000), likely less than 0.001%, likely less than 0.0001% if we use the track record of survival of the genus Homo",No,natural_risks,,https://www.nature.com/articles/s41598-019-47540-7,
+,,,,,natural_risks,,,

@@ -1,0 +1,5 @@
+"estimator","original_estimate","per_century_risk","estimate_confidence","conversion_confidence","reasoning"
+"Toby Ord (direct)","0.1% by 2120",0.00083,"High","High","Scaled from 98 years to 100 years. High confidence due to detailed methodology in The Precipice."
+"Roman Duda","0.1-2% in next 100 years",0.0105,"Medium","High","Direct century estimate, using midpoint of range. Medium confidence due to author's uncertainty about calculation."
+"Pamlin & Armstrong","0.0001 in 100 years",0.0001,"Medium","High","Direct century estimate. Medium confidence due to very precise small probability."
+"Toby Ord (risk factor)","0.1-1 percentage points by 2120",0.0055,"Medium","High","Scaled from 98 years to 100 years, using midpoint. Medium confidence due to explicitly rough nature of estimate."

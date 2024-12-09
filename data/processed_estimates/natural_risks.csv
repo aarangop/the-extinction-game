@@ -1,0 +1,8 @@
+"estimator","original_estimate","per_century_risk","estimate_confidence","conversion_confidence","reasoning"
+"Toby Ord","0.01% from supervolcano by 2120",0.0000083,"High","High","Scaled from 98 years (2022-2120) to 100 years. Clear methodology and timeframe."
+"Pamlin & Armstrong","3e-07 from supervolcano in 100 years",0.0000003,"Medium","High","Direct century estimate. Medium confidence due to extreme precision of small number."
+"Toby Ord","0.0001% from asteroid by 2120",0.00000083,"High","High","Scaled from 98 years to 100 years. Based on astronomical observations and models."
+"Pamlin & Armstrong","1.3e-06 from asteroid in 100 years",0.0000013,"Medium","High","Direct century estimate. Medium confidence due to precision of small probability."
+"Toby Ord","0.0000001% from stellar explosion by 2120",0.00000000083,"High","High","Scaled from 98 years to 100 years. Based on astronomical data."
+"Toby Ord","0.01% total natural risk by 2120",0.0000833,"High","High","Scaled from 98 years to 100 years. Comprehensive analysis of natural risks."
+"Snyder-Beattie, Ord, & Bonsall","<0.007% annual",0.00676,"High","Medium","Converted annual to century using compound probability: 1-(1-0.00007)^100. Used upper bound."
