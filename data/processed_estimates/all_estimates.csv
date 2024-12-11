@@ -1,86 +1,84 @@
-estimator,original_estimate,per_century_risk,estimate_confidence,conversion_confidence,reasoning,risk_category
-Matthew Barnett,0.1-0.2% SETI risk in 1000 years,0.00015,Low,Medium,Averaged range and scaled from 1000 years to 100. Low confidence due to self-described 'non-robust' estimate.,miscellaneous
-Holden Karnofsky (human),≥50% PASTA impact this century,0.5,Medium,High,Direct century estimate. Conditional on PASTA development. Medium confidence due to speculative nature.,miscellaneous
-Holden Karnofsky (galaxy),≥25% PASTA impact this century,0.25,Medium,High,Direct century estimate. Conditional on PASTA development. Medium confidence due to speculative nature.,miscellaneous
-Wei Dai,≥50% value loss from poor deliberation,0.5,Medium,Low,Unclear timeframe assumed to be century. Medium confidence as estimate includes detailed reasoning.,miscellaneous
-Paul Christiano,20% value loss from poor deliberation,0.2,Medium,Low,Unclear timeframe assumed to be century. Medium confidence due to explicit breakdown of factors.,miscellaneous
-Toby Ord (environmental),0.1% by 2120,0.00083,High,High,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,miscellaneous
-Pamlin & Armstrong (ecological),0.5% in 100 years,0.005,Medium,High,Direct century estimate. Medium confidence due to scope uncertainty.,miscellaneous
-Toby Ord (unforeseen),3% by 2120,0.025,Medium,High,Scaled from 98 years to 100 years. Medium confidence due to inherent uncertainty of 'unforeseen' risks.,miscellaneous
-Toby Ord (other anthro),2% by 2120,0.0167,High,High,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,miscellaneous
-Toby Ord (total anthro),17% by 2120,0.142,High,High,Scaled from 98 years to 100 years. High confidence due to comprehensive analysis.,miscellaneous
-Pamlin & Armstrong (uncertain),0.5% in 100 years,0.005,Low,High,Direct century estimate. Low confidence due to explicitly uncertain nature.,miscellaneous
-Dave Denkenberger,0.15% annual agricultural,0.139,Medium,Medium,Converted annual to century: 1-(1-0.0015)^100. Medium confidence due to detailed model.,miscellaneous
-Anders Sandberg,0.00023% annual agricultural,0.00023,Medium,Medium,Converted annual to century: 1-(1-0.0000023)^100. Medium confidence due to model adaptation.,miscellaneous
-Brian Tomasik,5% in millions of years (non-AGI),0.0005,Low,Low,Very rough scaling to century. Low confidence due to extremely long timeframe.,miscellaneous
-Pablo Stafforini,10% in millions of years (non-AGI),0.001,Low,Low,Very rough scaling to century. Low confidence due to extremely long timeframe.,miscellaneous
-Brian Tomasik (collapse),20% civilization collapse,0.2,Low,Medium,Assumed century timeframe. Low confidence due to approximate nature ('Maybe ~20%?').,miscellaneous
-Buck Shlegris (2023),25% doom,0.25,Medium,High,Direct century estimate. Medium confidence due to author noting 'fluctuates wildly'.,ai
-Bensinger Survey (safety),"Mean 30%, Median 20%",0.25,Medium,High,Direct century estimate. Using average of mean/median. Medium confidence due to expert survey methodology.,ai
-Bensinger Survey (alignment),"Mean 40%, Median 30%",0.35,Medium,High,Direct century estimate. Using average of mean/median. Medium confidence due to expert survey methodology.,ai
-Joe Carlsmith,5% by 2070,0.071,Medium,Medium,Scaled from 48 years to 100. Medium confidence due to 'highly-unstable' self-assessment.,ai
-Beth Barnes,10x smaller than alignment,0.035,Low,Medium,Derived from alignment estimates (~35%/10). Low confidence due to indirect estimation.,ai
-Rohin Shah,Similar to 10%,0.1,Medium,High,Direct century estimate. Medium confidence due to author's detailed reasoning.,ai
-Toby Ord,10% by 2120,0.083,High,High,Scaled from 98 years to 100. High confidence due to detailed methodology.,ai
-Rob Wiblin,Something like 10%,0.1,Medium,High,Direct century estimate. Medium confidence due to approximate language.,ai
-GCR Conference,5% by 2100,0.05,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,ai
-AI Experts Survey,5% extinction,0.05,Medium,High,Direct long-term estimate. Medium confidence due to survey methodology concerns.,ai
-Pamlin & Armstrong,0-10%,0.05,Low,High,Direct century estimate. Used midpoint. Low confidence due to wide range.,ai
-Ben Garfinkel,0.1-1%,0.0055,Medium,High,Direct century estimate. Used midpoint. Medium confidence due to clear range specification.,ai
-Rohin Shah (adversarial),5-9%,0.07,Medium,High,Direct century estimate. Used midpoint of updated range. Medium confidence due to author's caveats.,ai
-Buck Shlegris (2020),50%,0.5,Low,High,Direct century estimate. Low confidence due to later significant revision.,ai
-James Fodor,0.05%,0.0005,Low,High,Direct century estimate. Low confidence due to author's own caveats.,ai
-Stuart Armstrong (2020),5-30%,0.175,Medium,High,Direct century estimate. Used midpoint. Medium confidence due to range specification.,ai
-Stuart Armstrong (2014),33-50%,0.415,Low,High,Direct century estimate. Used midpoint. Low confidence due to noted instability.,ai
-Paul Christiano,10% value reduction,0.1,Medium,High,Direct century estimate. Medium confidence due to author's caveats about numbers.,ai
-Jaan Tallinn,33-50%,0.415,Medium,High,Direct century estimate. Used midpoint. Medium confidence due to explicit uncertainty.,ai
-Toby Ord (engineered),3% by 2120,0.025,High,High,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,biorisk
-GCR Conference (natural),0.05% by 2100,0.0005,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,biorisk
-Toby Ord (natural),0.01% by 2120,8.3e-05,High,High,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,biorisk
-GCR Conference (engineered),2% by 2100,0.02,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,biorisk
-Millet & Snyder-Beattie (natural),0.008-0.0000016% annual,0.0077,Medium,Medium,Compound annual to century: 1-(1-0.00008)^100. Used upper bound. Medium confidence due to wide range.,biorisk
-Millet & Snyder-Beattie (bioweapon),0.00019% annual,0.019,Medium,Medium,Compound annual to century: 1-(1-0.0000019)^100. Medium confidence due to technical analysis.,biorisk
-Pamlin & Armstrong (natural),0.0001% in 100 years,1e-06,Low,High,Direct century estimate. Low confidence due to extreme precision of small number.,biorisk
-Pamlin & Armstrong (synthetic),0.0001% in 100 years,1e-06,Low,High,Direct century estimate. Low confidence due to extreme precision of small number.,biorisk
-James Fodor,0.0002% in 100 years,2e-06,Low,High,Direct century estimate. Low confidence due to author's own caveats.,biorisk
-Toby Ord (direct),0.1% by 2120,0.00083,High,High,Scaled from 98 years to 100 years. High confidence due to detailed methodology in The Precipice.,climate_change
-Roman Duda,0.1-2% in next 100 years,0.0105,Medium,High,"Direct century estimate, using midpoint of range. Medium confidence due to author's uncertainty about calculation.",climate_change
-Pamlin & Armstrong,0.0001 in 100 years,0.0001,Medium,High,Direct century estimate. Medium confidence due to very precise small probability.,climate_change
-Toby Ord (risk factor),0.1-1 percentage points by 2120,0.0055,Medium,High,"Scaled from 98 years to 100 years, using midpoint. Medium confidence due to explicitly rough nature of estimate.",climate_change
-Bryan Caplan,5% in 1000 years,0.005,Medium,Medium,Scaled from 1000 years to 100 years. Medium confidence due to author's explicit acknowledgment of complexity and guesswork in estimate.,dystopia
-Toby Ord (nano),2% by 2120,0.0167,High,High,Scaled from 98 years (2022-2120) to 100 years. Broader category of other anthropogenic risks.,nanotechnology
-Pamlin & Armstrong (nano),0.0001 in 100 years,0.0001,Medium,High,Direct century estimate. Medium confidence due to very precise small probability.,nanotechnology
-GCR Conference (nano weapons),5% by 2100,0.05,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology
-GCR Conference (nano accident),0.5% by 2100,0.005,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology
-Toby Ord (nuclear),0.1% by 2120,0.00083,High,High,Scaled from 98 years to 100 years. Based on historical data and expert assessment.,nanotechnology
-GCR Conference (nuclear war),1% by 2100,0.01,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology
-GCR Conference (nuclear terrorism),0.03% by 2100,0.0003,Medium,High,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology
-Ben Todd,≥0.3% next century,0.003,Medium,High,Direct century estimate. Medium confidence due to qualification 'probably at or above'.,nanotechnology
-Dave Denkenberger,0.29% annual,0.25,Medium,Medium,Converted annual to century using compound probability: 1-(1-0.0029)^100.,nanotechnology
-Anders Sandberg,0.051% annual,0.05,Medium,Medium,Converted annual to century using compound probability: 1-(1-0.00051)^100.,nanotechnology
-Alexey Turchin,~1% this century,0.01,Low,High,Direct century estimate. Low confidence due to approximate nature ('in the order of').,nanotechnology
-Pamlin & Armstrong (nuclear),0.00005 in 100 years,5e-05,Medium,High,Direct century estimate. Medium confidence due to very precise small probability.,nanotechnology
-Toby Ord,17% by 2120,0.142,High,High,Original covers 2020-2120 (98 years). Linear scaling to 100 years.,total
-GCR Conference,19% by 2100,0.19,Medium,High,Already per century estimate.,total
-Will MacAskill,1% in 21st century,0.01,High,High,Direct century estimate.,total
-Ben Todd,≥3% next century,0.03,Medium,High,Direct century estimate.,total
-John Leslie,≥30% over 500 years,0.06,Low,Medium,Divided by 5 for century rate.,total
-Martin Rees,≤50% survival this century,0.5,Medium,High,Direct century estimate.,total
-Metaculus responders,Median 1% Mean 8% by 2100,0.045,Medium,High,Average of median and mean.,total
-Nick Bostrom,≥25%,0.25,Low,Low,Unclear timeframe assumed to be century.,total
-Gott III,5% before 5100 years,0.00098,Low,Low,Divided by 51 for century rate.,total
-Wells,0.3-0.4% annual,0.295,Medium,Medium,Compound annual risk: 1-(1-0.004)^100. Used midpoint.,total
-Simpson,0.2% annual GCR,0.181,Medium,Medium,Compound annual to century: 1-(1-0.002)^100.,total
-Toby Ord,50% survival long-term,,Medium,,Cannot convert to century rate.,total
-Frank Tipler,extinction this century,1.0,Low,High,Direct century estimate.,total
-Ozzie Gooen,>20% survival for billions of years,,Low,,Cannot convert to century rate.,total
-Toby Ord,1.7 percentage points by 2120,0.014,High,High,Scaled from 98 years (2022-2120) to 100 years. Estimate is explicit reduction in x-risk if great power war avoided.,war
-Will MacAskill,90% conditional on x-risk occurring,0.9,Medium,Medium,Direct century estimate but represents conditional probability rather than absolute risk. Medium confidence due to potential ambiguity in interpretation.,war
-GCR Conference,4% by 2100,0.04,Medium,High,Direct century estimate. Medium confidence due to survey methodology and median value.,war
-Toby Ord,0.01% from supervolcano by 2120,8.3e-06,High,High,Scaled from 98 years (2022-2120) to 100 years. Clear methodology and timeframe.,natural_risks
-Pamlin & Armstrong,3e-07 from supervolcano in 100 years,3e-07,Medium,High,Direct century estimate. Medium confidence due to extreme precision of small number.,natural_risks
-Toby Ord,0.0001% from asteroid by 2120,8.3e-07,High,High,Scaled from 98 years to 100 years. Based on astronomical observations and models.,natural_risks
-Pamlin & Armstrong,1.3e-06 from asteroid in 100 years,1.3e-06,Medium,High,Direct century estimate. Medium confidence due to precision of small probability.,natural_risks
-Toby Ord,0.0000001% from stellar explosion by 2120,8.3e-10,High,High,Scaled from 98 years to 100 years. Based on astronomical data.,natural_risks
-Toby Ord,0.01% total natural risk by 2120,8.33e-05,High,High,Scaled from 98 years to 100 years. Comprehensive analysis of natural risks.,natural_risks
-"Snyder-Beattie, Ord, & Bonsall",<0.007% annual,0.00676,High,Medium,Converted annual to century using compound probability: 1-(1-0.00007)^100. Used upper bound.,natural_risks
+estimator,original_estimate,per_century_risk,estimate_confidence,conversion_confidence,reasoning,risk_category,estimate_confidence_numeric,conversion_confidence_numeric
+Toby Ord (nano),2% by 2120,0.0167,high,high,Scaled from 98 years (2022-2120) to 100 years. Broader category of other anthropogenic risks.,nanotechnology,3,3
+Pamlin & Armstrong (nano),0.0001 in 100 years,0.0001,medium,high,Direct century estimate. Medium confidence due to very precise small probability.,nanotechnology,2,3
+GCR Conference (nano weapons),5% by 2100,0.05,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology,2,3
+GCR Conference (nano accident),0.5% by 2100,0.005,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology,2,3
+Toby Ord (nuclear),0.1% by 2120,0.00083,high,high,Scaled from 98 years to 100 years. Based on historical data and expert assessment.,nanotechnology,3,3
+GCR Conference (nuclear war),1% by 2100,0.01,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology,2,3
+GCR Conference (nuclear terrorism),0.03% by 2100,0.0003,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology,2,3
+Ben Todd,≥0.3% next century,0.003,medium,high,Direct century estimate. Medium confidence due to qualification 'probably at or above'.,nanotechnology,2,3
+Dave Denkenberger,0.29% annual,0.25,medium,medium,Converted annual to century using compound probability: 1-(1-0.0029)^100.,nanotechnology,2,2
+Anders Sandberg,0.051% annual,0.05,medium,medium,Converted annual to century using compound probability: 1-(1-0.00051)^100.,nanotechnology,2,2
+Alexey Turchin,~1% this century,0.01,low,high,Direct century estimate. Low confidence due to approximate nature ('in the order of').,nanotechnology,1,3
+Pamlin & Armstrong (nuclear),0.00005 in 100 years,5e-05,medium,high,Direct century estimate. Medium confidence due to very precise small probability.,nanotechnology,2,3
+Toby Ord,0.01% from supervolcano by 2120,8.3e-06,high,high,Scaled from 98 years (2022-2120) to 100 years. Clear methodology and timeframe.,natural_risks,3,3
+Pamlin & Armstrong,3e-07 from supervolcano in 100 years,3e-07,medium,high,Direct century estimate. Medium confidence due to extreme precision of small number.,natural_risks,2,3
+Toby Ord,0.0001% from asteroid by 2120,8.3e-07,high,high,Scaled from 98 years to 100 years. Based on astronomical observations and models.,natural_risks,3,3
+Pamlin & Armstrong,1.3e-06 from asteroid in 100 years,1.3e-06,medium,high,Direct century estimate. Medium confidence due to precision of small probability.,natural_risks,2,3
+Toby Ord,0.0000001% from stellar explosion by 2120,8.3e-10,high,high,Scaled from 98 years to 100 years. Based on astronomical data.,natural_risks,3,3
+Toby Ord,0.01% total natural risk by 2120,8.33e-05,high,high,Scaled from 98 years to 100 years. Comprehensive analysis of natural risks.,natural_risks,3,3
+"Snyder-Beattie, Ord, & Bonsall",<0.007% annual,0.00676,high,medium,Converted annual to century using compound probability: 1-(1-0.00007)^100. Used upper bound.,natural_risks,3,2
+Toby Ord,1.7 percentage points by 2120,0.014,high,high,Scaled from 98 years (2022-2120) to 100 years. Estimate is explicit reduction in x-risk if great power war avoided.,war,3,3
+Will MacAskill,90% conditional on x-risk occurring,0.9,medium,medium,Direct century estimate but represents conditional probability rather than absolute risk. Medium confidence due to potential ambiguity in interpretation.,war,2,2
+GCR Conference,4% by 2100,0.04,medium,high,Direct century estimate. Medium confidence due to survey methodology and median value.,war,2,3
+Toby Ord,17% by 2120,0.142,high,high,Original covers 2020-2120 (98 years). Linear scaling to 100 years.,total,3,3
+GCR Conference,19% by 2100,0.19,medium,high,Already per century estimate.,total,2,3
+Will MacAskill,1% in 21st century,0.01,high,high,Direct century estimate.,total,3,3
+Ben Todd,≥3% next century,0.03,medium,high,Direct century estimate.,total,2,3
+John Leslie,≥30% over 500 years,0.06,low,medium,Divided by 5 for century rate.,total,1,2
+Martin Rees,≤50% survival this century,0.5,medium,high,Direct century estimate.,total,2,3
+Metaculus responders,Median 1% Mean 8% by 2100,0.045,medium,high,Average of median and mean.,total,2,3
+Nick Bostrom,≥25%,0.25,low,low,Unclear timeframe assumed to be century.,total,1,1
+Gott III,5% before 5100 years,0.00098,low,low,Divided by 51 for century rate.,total,1,1
+Wells,0.3-0.4% annual,0.295,medium,medium,Compound annual risk: 1-(1-0.004)^100. Used midpoint.,total,2,2
+Simpson,0.2% annual GCR,0.181,medium,medium,Compound annual to century: 1-(1-0.002)^100.,total,2,2
+Frank Tipler,extinction this century,1.0,low,high,Direct century estimate.,total,1,3
+Buck Shlegris (2023),25% doom,0.25,medium,high,Direct century estimate. Medium confidence due to author noting 'fluctuates wildly'.,ai,2,3
+Bensinger Survey (safety),"Mean 30%, Median 20%",0.25,medium,high,Direct century estimate. Using average of mean/median. Medium confidence due to expert survey methodology.,ai,2,3
+Bensinger Survey (alignment),"Mean 40%, Median 30%",0.35,medium,high,Direct century estimate. Using average of mean/median. Medium confidence due to expert survey methodology.,ai,2,3
+Joe Carlsmith,5% by 2070,0.071,medium,medium,Scaled from 48 years to 100. Medium confidence due to 'highly-unstable' self-assessment.,ai,2,2
+Beth Barnes,10x smaller than alignment,0.035,low,medium,Derived from alignment estimates (~35%/10). Low confidence due to indirect estimation.,ai,1,2
+Rohin Shah,Similar to 10%,0.1,medium,high,Direct century estimate. Medium confidence due to author's detailed reasoning.,ai,2,3
+Toby Ord,10% by 2120,0.083,high,high,Scaled from 98 years to 100. High confidence due to detailed methodology.,ai,3,3
+Rob Wiblin,Something like 10%,0.1,medium,high,Direct century estimate. Medium confidence due to approximate language.,ai,2,3
+GCR Conference,5% by 2100,0.05,medium,high,Direct century estimate. Medium confidence due to survey methodology.,ai,2,3
+AI Experts Survey,5% extinction,0.05,medium,high,Direct long-term estimate. Medium confidence due to survey methodology concerns.,ai,2,3
+Pamlin & Armstrong,0-10%,0.05,low,high,Direct century estimate. Used midpoint. Low confidence due to wide range.,ai,1,3
+Ben Garfinkel,0.1-1%,0.0055,medium,high,Direct century estimate. Used midpoint. Medium confidence due to clear range specification.,ai,2,3
+Rohin Shah (adversarial),5-9%,0.07,medium,high,Direct century estimate. Used midpoint of updated range. Medium confidence due to author's caveats.,ai,2,3
+Buck Shlegris (2020),50%,0.5,low,high,Direct century estimate. Low confidence due to later significant revision.,ai,1,3
+James Fodor,0.05%,0.0005,low,high,Direct century estimate. Low confidence due to author's own caveats.,ai,1,3
+Stuart Armstrong (2020),5-30%,0.175,medium,high,Direct century estimate. Used midpoint. Medium confidence due to range specification.,ai,2,3
+Stuart Armstrong (2014),33-50%,0.415,low,high,Direct century estimate. Used midpoint. Low confidence due to noted instability.,ai,1,3
+Paul Christiano,10% value reduction,0.1,medium,high,Direct century estimate. Medium confidence due to author's caveats about numbers.,ai,2,3
+Jaan Tallinn,33-50%,0.415,medium,high,Direct century estimate. Used midpoint. Medium confidence due to explicit uncertainty.,ai,2,3
+Matthew Barnett,0.1-0.2% SETI risk in 1000 years,0.00015,low,medium,Averaged range and scaled from 1000 years to 100. Low confidence due to self-described 'non-robust' estimate.,miscellaneous,1,2
+Holden Karnofsky (human),≥50% PASTA impact this century,0.5,medium,high,Direct century estimate. Conditional on PASTA development. Medium confidence due to speculative nature.,miscellaneous,2,3
+Holden Karnofsky (galaxy),≥25% PASTA impact this century,0.25,medium,high,Direct century estimate. Conditional on PASTA development. Medium confidence due to speculative nature.,miscellaneous,2,3
+Wei Dai,≥50% value loss from poor deliberation,0.5,medium,low,Unclear timeframe assumed to be century. Medium confidence as estimate includes detailed reasoning.,miscellaneous,2,1
+Paul Christiano,20% value loss from poor deliberation,0.2,medium,low,Unclear timeframe assumed to be century. Medium confidence due to explicit breakdown of factors.,miscellaneous,2,1
+Toby Ord (environmental),0.1% by 2120,0.00083,high,high,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,miscellaneous,3,3
+Pamlin & Armstrong (ecological),0.5% in 100 years,0.005,medium,high,Direct century estimate. Medium confidence due to scope uncertainty.,miscellaneous,2,3
+Toby Ord (unforeseen),3% by 2120,0.025,medium,high,Scaled from 98 years to 100 years. Medium confidence due to inherent uncertainty of 'unforeseen' risks.,miscellaneous,2,3
+Toby Ord (other anthro),2% by 2120,0.0167,high,high,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,miscellaneous,3,3
+Toby Ord (total anthro),17% by 2120,0.142,high,high,Scaled from 98 years to 100 years. High confidence due to comprehensive analysis.,miscellaneous,3,3
+Pamlin & Armstrong (uncertain),0.5% in 100 years,0.005,low,high,Direct century estimate. Low confidence due to explicitly uncertain nature.,miscellaneous,1,3
+Dave Denkenberger,0.15% annual agricultural,0.139,medium,medium,Converted annual to century: 1-(1-0.0015)^100. Medium confidence due to detailed model.,miscellaneous,2,2
+Anders Sandberg,0.00023% annual agricultural,0.00023,medium,medium,Converted annual to century: 1-(1-0.0000023)^100. Medium confidence due to model adaptation.,miscellaneous,2,2
+Brian Tomasik,5% in millions of years (non-AGI),0.0005,low,low,Very rough scaling to century. Low confidence due to extremely long timeframe.,miscellaneous,1,1
+Pablo Stafforini,10% in millions of years (non-AGI),0.001,low,low,Very rough scaling to century. Low confidence due to extremely long timeframe.,miscellaneous,1,1
+Brian Tomasik (collapse),20% civilization collapse,0.2,low,medium,Assumed century timeframe. Low confidence due to approximate nature ('Maybe ~20%?').,miscellaneous,1,2
+Toby Ord (direct),0.1% by 2120,0.00083,high,high,Scaled from 98 years to 100 years. High confidence due to detailed methodology in The Precipice.,climate_change,3,3
+Roman Duda,0.1-2% in next 100 years,0.0105,medium,high,"Direct century estimate, using midpoint of range. Medium confidence due to author's uncertainty about calculation.",climate_change,2,3
+Pamlin & Armstrong,0.0001 in 100 years,0.0001,medium,high,Direct century estimate. Medium confidence due to very precise small probability.,climate_change,2,3
+Toby Ord (risk factor),0.1-1 percentage points by 2120,0.0055,medium,high,"Scaled from 98 years to 100 years, using midpoint. Medium confidence due to explicitly rough nature of estimate.",climate_change,2,3
+Bryan Caplan,5% in 1000 years,0.005,medium,medium,Scaled from 1000 years to 100 years. Medium confidence due to author's explicit acknowledgment of complexity and guesswork in estimate.,dystopia,2,2
+Toby Ord (engineered),3% by 2120,0.025,high,high,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,biorisk,3,3
+GCR Conference (natural),0.05% by 2100,0.0005,medium,high,Direct century estimate. Medium confidence due to survey methodology.,biorisk,2,3
+Toby Ord (natural),0.01% by 2120,8.3e-05,high,high,Scaled from 98 years to 100 years. High confidence due to detailed methodology.,biorisk,3,3
+GCR Conference (engineered),2% by 2100,0.02,medium,high,Direct century estimate. Medium confidence due to survey methodology.,biorisk,2,3
+Millet & Snyder-Beattie (natural),0.008-0.0000016% annual,0.0077,medium,medium,Compound annual to century: 1-(1-0.00008)^100. Used upper bound. Medium confidence due to wide range.,biorisk,2,2
+Millet & Snyder-Beattie (bioweapon),0.00019% annual,0.019,medium,medium,Compound annual to century: 1-(1-0.0000019)^100. Medium confidence due to technical analysis.,biorisk,2,2
+Pamlin & Armstrong (natural),0.0001% in 100 years,1e-06,low,high,Direct century estimate. Low confidence due to extreme precision of small number.,biorisk,1,3
+Pamlin & Armstrong (synthetic),0.0001% in 100 years,1e-06,low,high,Direct century estimate. Low confidence due to extreme precision of small number.,biorisk,1,3
+James Fodor,0.0002% in 100 years,2e-06,low,high,Direct century estimate. Low confidence due to author's own caveats.,biorisk,1,3
