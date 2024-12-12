@@ -1,4 +1,4 @@
-"estimator","original_estimate","per_century_risk","estimate_confidence","conversion_confidence","reasoning"
-"Toby Ord","1.7 percentage points by 2120",0.014,"High","High","Scaled from 98 years (2022-2120) to 100 years. Estimate is explicit reduction in x-risk if great power war avoided."
-"Will MacAskill","90% conditional on x-risk occurring",0.9,"Medium","Medium","Direct century estimate but represents conditional probability rather than absolute risk. Medium confidence due to potential ambiguity in interpretation."
-"GCR Conference","4% by 2100",0.04,"Medium","High","Direct century estimate. Medium confidence due to survey methodology and median value."
+estimator,original_estimate,per_century_risk,estimate_confidence,conversion_confidence,reasoning,risk_category,estimate_confidence_numeric,conversion_confidence_numeric,date
+Toby Ord,1.7 percentage points by 2120,0.014,high,high,Scaled from 98 years (2022-2120) to 100 years. Estimate is explicit reduction in x-risk if great power war avoided.,war,3,3,2020
+Will MacAskill,90% conditional on x-risk occurring,0.9,medium,medium,Direct century estimate but represents conditional probability rather than absolute risk. Medium confidence due to potential ambiguity in interpretation.,war,2,2,2019
+GCR Conference,4% by 2100,0.04,medium,high,Direct century estimate. Medium confidence due to survey methodology and median value.,war,2,3,2008

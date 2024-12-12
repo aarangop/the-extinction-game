@@ -1,9 +1,9 @@
-"estimator","original_estimate","per_century_risk","estimate_confidence","conversion_confidence","reasoning"
-"Toby Ord","0.1% by 2120",0.00083,"High","High","Scaled from 98 years (2022-2120) to 100 years. Based on historical data and expert assessment."
-"GCR Conference (war)","1% by 2100",0.01,"Medium","High","Direct century estimate. Medium confidence due to survey methodology."
-"GCR Conference (terrorism)","0.03% by 2100",0.0003,"Medium","High","Direct century estimate. Medium confidence due to survey methodology."
-"Ben Todd","≥0.3% next century",0.003,"Medium","High","Direct century estimate. Medium confidence due to use of 'probably at or above' qualifier."
-"Dave Denkenberger","0.29% annual",0.25,"Medium","Medium","Annual to century using compound probability: 1-(1-0.0029)^100. Medium confidence due to model based on expert survey."
-"Anders Sandberg","0.051% annual",0.05,"Medium","Medium","Annual to century using compound probability: 1-(1-0.00051)^100. Medium confidence due to modified expert model."
-"Alexey Turchin","~1% this century",0.01,"Low","High","Direct century estimate. Low confidence due to approximate nature and unclear methodology."
-"Pamlin & Armstrong","0.00005 in 100 years",0.00005,"Medium","High","Direct century estimate. Medium confidence due to very precise small probability."
+estimator,original_estimate,per_century_risk,estimate_confidence,conversion_confidence,reasoning,risk_category,estimate_confidence_numeric,conversion_confidence_numeric,date
+Toby Ord,0.1% by 2120,0.00083,high,high,Scaled from 98 years to 100 years. Based on historical data and expert assessment.,nuclear,3,3,2020
+GCR Conference (nuclear war),1% by 2100,0.01,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nuclear,2,3,2008
+GCR Conference (nuclear terrorism),0.03% by 2100,0.0003,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nuclear,2,3,2008
+Ben Todd,≥0.3% next century,0.003,medium,high,Direct century estimate. Medium confidence due to qualification 'probably at or above'.,nuclear,2,3,2017
+Dave Denkenberger,0.29% annual,0.25,medium,medium,Converted annual to century using compound probability: 1-(1-0.0029)^100.,nuclear,2,2,2018
+Anders Sandberg,0.051% annual,0.05,medium,medium,Converted annual to century using compound probability: 1-(1-0.00051)^100.,nuclear,2,2,2018
+Alexey Turchin,~1% this century,0.01,low,high,Direct century estimate. Low confidence due to approximate nature ('in the order of').,nuclear,1,3,2020
+Pamlin & Armstrong,0.00005 in 100 years,5e-05,medium,high,Direct century estimate. Medium confidence due to very precise small probability.,nuclear,2,3,2015

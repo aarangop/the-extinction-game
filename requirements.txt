@@ -6,3 +6,5 @@ seaborn
 tables
 llama-cpp-python
 openpyxl
+scikit-learn
+scipy

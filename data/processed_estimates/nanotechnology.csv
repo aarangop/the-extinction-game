@@ -1,9 +1,5 @@
-"estimator","original_estimate","per_century_risk","estimate_confidence","conversion_confidence","reasoning"
-"Toby Ord (nano)","2% by 2120","0.0167","High","High","Scaled from 98 years (2022-2120) to 100 years. Broader category of other anthropogenic risks."
-"Pamlin & Armstrong (nano)","0.0001 in 100 years","0.0001","Medium","High","Direct century estimate. Medium confidence due to very precise small probability."
-"GCR Conference (nano weapons)","5% by 2100","0.05","Medium","High","Direct century estimate. Medium confidence due to survey methodology."
-"GCR Conference (nano accident)","0.5% by 2100","0.005","Medium","High","Direct century estimate. Medium confidence due to survey methodology."
-"Toby Ord (nuclear)","0.1% by 2120","0.00083","High","High","Scaled from 98 years to 100 years. Based on historical data and expert assessment."
-"GCR Conference (nuclear war)","1% by 2100","0.01","Medium","High","Direct century estimate. Medium confidence due to survey methodology."
-"GCR Conference (nuclear terrorism)","0.03% by 2100","0.0003","Medium","High","Direct century estimate. Medium confidence due to survey methodology."
-"Ben Todd","≥0.3% next century","0.003","Medium","High","Direct century estimate. Medium confidence due to qualification 'probably at or above'."
+estimator,original_estimate,per_century_risk,estimate_confidence,conversion_confidence,reasoning,risk_category,estimate_confidence_numeric,conversion_confidence_numeric,date
+Toby Ord (nano),2% by 2120,0.0167,high,high,Scaled from 98 years (2022-2120) to 100 years. Broader category of other anthropogenic risks.,nanotechnology,3,3,2020
+Pamlin & Armstrong (nano),0.0001 in 100 years,0.0001,medium,high,Direct century estimate. Medium confidence due to very precise small probability.,nanotechnology,2,3,2015
+GCR Conference (nano weapons),5% by 2100,0.05,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology,2,3,2008
+GCR Conference (nano accident),0.5% by 2100,0.005,medium,high,Direct century estimate. Medium confidence due to survey methodology.,nanotechnology,2,3,2008

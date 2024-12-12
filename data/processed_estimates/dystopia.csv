@@ -1,2 +1,2 @@
-"estimator","original_estimate","per_century_risk","estimate_confidence","conversion_confidence","reasoning"
-"Bryan Caplan","5% in 1000 years",0.005,"Medium","Medium","Scaled from 1000 years to 100 years. Medium confidence due to author's explicit acknowledgment of complexity and guesswork in estimate."
+estimator,original_estimate,per_century_risk,estimate_confidence,conversion_confidence,reasoning,risk_category,estimate_confidence_numeric,conversion_confidence_numeric,date
+Bryan Caplan,5% in 1000 years,0.005,medium,medium,Scaled from 1000 years to 100 years. Medium confidence due to author's explicit acknowledgment of complexity and guesswork in estimate.,dystopia,2,2,2006
