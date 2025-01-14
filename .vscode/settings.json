@@ -1,0 +1,5 @@
+{
+  "python.testing.pytestArgs": ["the_extinction_game"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
