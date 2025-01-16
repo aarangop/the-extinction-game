@@ -1,10 +1,10 @@
 import pytest
-from the_extinction_game.independent_risk_tree import MultiRiskModel
+from the_extinction_game.models.multi_risk_binary_tree import MultiRiskBinaryTreeModel
 
 
 @pytest.fixture
 def multi_risk_model():
-    model = MultiRiskModel({
+    model = MultiRiskBinaryTreeModel({
         "R1": (0.1, 0.01),
         "R2": (0.2, 0.02),
     }, 3)
@@ -12,7 +12,7 @@ def multi_risk_model():
 
 
 def test_build_all_risk_trees_empty():
-    model = MultiRiskModel({}, n_centuries=3)
+    model = MultiRiskBinaryTreeModel({}, n_centuries=3)
     trees = model.build_all_risk_trees()
 
     # Should return a list of length 0
@@ -22,7 +22,7 @@ def test_build_all_risk_trees_empty():
 
 
 def test_build_all_risk_trees_single_risk():
-    model = MultiRiskModel({"R1": (0.1, 0.01)}, 3)
+    model = MultiRiskBinaryTreeModel({"R1": (0.1, 0.01)}, 3)
     trees = model.build_all_risk_trees()
     assert len(trees) == 1
     assert trees.shape == (1, 3, 4)

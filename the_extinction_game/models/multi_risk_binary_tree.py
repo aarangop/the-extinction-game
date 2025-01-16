@@ -5,10 +5,11 @@ import seaborn as sns
 import numpy as np
 from typing import Dict, List, Tuple
 
-from the_extinction_game.basic_risk_tree import build_xrisk_tree, run_survival_simulation, set_extinction_event
+from the_extinction_game.models.single_risk_binary_tree import build_xrisk_tree, run_survival_simulation, set_extinction_event
+from .risk_model_interface import RiskModel
 
 
-class MultiRiskModel:
+class MultiRiskBinaryTreeModel(RiskModel):
 
     def __init__(self,
                  risk_categories: Dict[str, Tuple[float, float]],
@@ -20,23 +21,31 @@ class MultiRiskModel:
         risk_categories: Dict mapping category names to (initial_risk, alpha) tuples
         n_centuries: Number of centuries to simulate
         """
+        self.n_branches = n_centuries
+        self.n_branches = 2**(n_centuries-1)
         self.risk_categories = risk_categories
         self.n_categories = len(risk_categories)
-        self.n_centuries = n_centuries
-        self.n_branches = 2**(n_centuries-1)
 
         # Build risk trees
         self.risk_trees = self.build_risk_trees()
+
+    @property
+    def n_branches(self) -> int:
+        return self.n_branches
+
+    @property
+    def n_branches(self) -> int:
+        return self.n_branches
 
     def build_risk_trees(self) -> Dict[str, np.ndarray]:
         """Build risk trees for all categories."""
 
         self.risk_trees = np.zeros(
-            (self.n_categories, self.n_centuries, self.n_branches))
+            (self.n_categories, self.n_branches, self.n_branches))
 
         for i, (_, (initial_risk, alpha)) in enumerate(self.risk_categories.items()):
             self.risk_trees[i] = build_xrisk_tree(
-                self.n_centuries, initial_risk, alpha
+                self.n_branches, initial_risk, alpha
             )
         return self.risk_trees
 

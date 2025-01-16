@@ -4,6 +4,49 @@ import time
 from datetime import timedelta
 
 
+class SingleRiskBinaryTreeModel():
+
+    def __init__(self, n_centuries, alpha):
+
+        self.n_centuries = n_centuries
+        self.alpha = alpha
+        self.risk_tree = self.build_risk_tree()
+
+    def build_risk_tree(self):
+        return build_xrisk_tree(self.n_centuries, initial_risk=0.1, alpha=self.alpha)
+
+    def run_simulation(self):
+        return run_survival_simulation(self.risk_tree)
+
+    def run_experiment(self, n_simulations):
+        return run_experiment(n_simulations, self.n_centuries, initial_risk=0.1, alpha=self.alpha)
+
+    def estimate_runtime(self, n_simulations):
+        return estimate_simulation_runtime(self.n_centuries, n_simulations, initial_risk=0.1, alpha=self.alpha)
+
+    def print_runtime_estimate(self, n_simulations):
+        estimate = self.estimate_runtime(n_simulations)
+        print("\nSimulation Runtime Estimate")
+        print("==========================")
+        print(f"Parameters:")
+        print(f"  Centuries: {self.n_centuries}")
+        print(f"  Simulations: {n_simulations:,}")
+        print("\nEstimated Timings:")
+        print(f"  Tree Building: {estimate['tree_build_time_seconds']}")
+        print(f"  Simulation Runs: {estimate['simulation_time_seconds']}")
+        print(f"  Total Runtime: {estimate['estimated_runtime_seconds']}")
+        print(f"\nMemory Requirements: {estimate['memory_gb']} GB")
+        print("\nBenchmark Details:")
+        print(f"  Centuries Tested: {estimate['centuries_tested']}")
+        print(f"  Simulations Tested: {estimate['simulations_tested']}")
+        print(f"  Benchmark Runtime: {estimate['benchmark_runtime']}")
+
+        if 'warnings' in estimate:
+            print("\nWarnings:")
+            for warning in estimate['warnings']:
+                print(f"  ! {warning}")
+
+
 def get_xrisk_tree_shape(c_centuries):
     """
     Calculate the shape of an existential risk tree.
@@ -103,7 +146,8 @@ def set_extinction_event(survival_matrix):
         - extinction_century (numpy.ndarray): A 1D array where each element represents the century (index) at which the corresponding branch went extinct. 
                                               A value of -1 indicates that the branch survived all the way to the end.
     """
-    extinction_century = np.ndarray(survival_matrix.shape[1], dtype=int)
+
+    extinction_century = np.zeros(survival_matrix.shape[1], dtype=int)
 
     # Check each column and see if any was "lost" (i.e., a civilization went extinct).
     for j in range(survival_matrix.shape[1]):

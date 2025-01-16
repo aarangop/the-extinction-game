@@ -3,17 +3,18 @@ import numpy as np
 from typing import Tuple, Any
 import seaborn as sns
 import pandas as pd
+from .models.risk_model_interface import RiskModel
 
 
 class Experiment:
     """Class to handle running experiments with risk models."""
 
-    def __init__(self, model: Any, n_simulations: int = 1000):
+    def __init__(self, model: RiskModel, n_simulations: int = 1000):
         """
         Initialize the experiment.
 
         Args:
-            model: The risk model to use for simulations
+            model: The risk model to use for simulations (must implement RiskModel interface)
             n_simulations: Number of simulations to run (default: 1000)
         """
         self.model = model
@@ -31,9 +32,9 @@ class Experiment:
             - Array of extinction centuries for each simulation
         """
         results = np.zeros(
-            (self.model.n_centuries, self.model.n_branches))
+            (self.model.n_branches, self.model.n_centuries))
         self.extinction_centuries = np.ndarray(
-            (self.n_simulations, self.model.n_branches))
+            (self.n_simulations, self.model.n_centuries))
 
         # Run simulations
         for i in range(self.n_simulations):
@@ -142,53 +143,55 @@ class Experiment:
         plt.Figure
             Figure containing multiple plots analyzing the results
         """
+
         # Create figure with multiple subplots
-        fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+        fig = plt.figure(figsize=(12, 12))
+
+        # Make GridSpec to adjust layout
+        gs = fig.add_gridspec(2, 2)
 
         # Get statistics
         stats_df, survival_by_century = self.get_stats()
 
-        # 1. Average Survival Rate Over Time
-        axes[0, 0].fill_between(survival_by_century.century,
-                                survival_by_century.q25_survival,
-                                survival_by_century.q75_survival,
-                                alpha=0.3, color='blue', label='25-75 percentile')
-        axes[0, 0].plot(survival_by_century.century,
-                        survival_by_century.avg_survival,
-                        'b-', label='Mean survival')
-        axes[0, 0].set_title('Survival Rate Over Time')
-        axes[0, 0].set_xlabel('Century')
-        axes[0, 0].set_ylabel('Survival Rate')
-        axes[0, 0].legend()
+        # 1. Average Survival Rate Over Time (covering two columns)
+        # Make the first ax span two columns
+        ax0 = fig.add_subplot(gs[0, :])
+        ax0.fill_between(survival_by_century.century,
+                         survival_by_century.q25_survival,
+                         survival_by_century.q75_survival,
+                         alpha=0.3, color='blue', label='25-75 percentile')
+        ax0.plot(survival_by_century.century,
+                 survival_by_century.avg_survival,
+                 'b-', label='Mean survival')
+        ax0.set_title('Survival Rate Over Time')
+        ax0.set_xlabel('Century')
+        ax0.set_ylabel('Survival Rate')
+        ax0.legend()
 
         # 2. Extinction Century Distribution
+        ax1 = fig.add_subplot(gs[1, 0])
         extinct_centuries = self.extinction_centuries[self.extinction_centuries != -1]
         if len(extinct_centuries) > 0:
-            sns.histplot(data=extinct_centuries, bins=30, ax=axes[0, 1])
-            axes[0, 1].axvline(np.median(extinct_centuries), color='r', linestyle='--',
-                               label=f'Median: {np.median(extinct_centuries):.1f}')
-            axes[0, 1].axvline(np.mean(extinct_centuries), color='g', linestyle='--',
-                               label=f'Mean: {np.mean(extinct_centuries):.1f}')
-        axes[0, 1].set_title('Distribution of Extinction Centuries')
-        axes[0, 1].set_xlabel('Century')
-        axes[0, 1].set_ylabel('Count')
-        axes[0, 1].legend()
+            sns.histplot(data=extinct_centuries,
+                         bins=30, ax=ax1, stat='count')
+            ax1.axvline(np.median(extinct_centuries), color='r', linestyle='--',
+                        label=f'Median: {np.median(extinct_centuries):.1f}')
+            ax1.axvline(np.mean(extinct_centuries), color='g', linestyle='--',
+                        label=f'Mean: {np.mean(extinct_centuries):.1f}')
+        ax1.set_title('Distribution of Extinction Centuries')
+        ax1.set_xlabel('Century')
+        ax1.set_ylabel('Count')
+        ax1.legend()
 
-        # 3. Survival Heatmap
-        sns.heatmap(self.results[:, :min(100, self.results.shape[1])],
-                    ax=axes[1, 0],
-                    cmap='viridis')
-        axes[1, 0].set_title('Survival Heatmap (First 100 Branches)')
-        axes[1, 0].set_xlabel('Branch')
-        axes[1, 0].set_ylabel('Century')
-
-        # 4. Final State Distribution
+        # 3. Final State Distribution (using density)
+        ax2 = fig.add_subplot(gs[1, 1])
         final_state = self.results[-1]
-        axes[1, 1].hist(final_state, bins=2, rwidth=0.8)
-        axes[1, 1].set_title('Distribution of Final States')
-        axes[1, 1].set_xlabel('State (0=Extinct, 1=Survived)')
-        axes[1, 1].set_ylabel('Count')
-        axes[1, 1].set_xticks([0, 1])
+        sns.histplot(final_state, bins=2, ax=ax2,
+                     stat='count', discrete=True)
+        ax2.set_title('Distribution of Final States')
+        ax2.set_xlabel('State (0=Extinct, 1=Survived)')
+        ax2.set_ylabel('Count')
+        ax2.set_xticks([0, 1])
 
         plt.tight_layout()
         return fig

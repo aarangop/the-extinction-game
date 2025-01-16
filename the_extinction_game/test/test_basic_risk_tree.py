@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from the_extinction_game.basic_risk_tree import (
+from the_extinction_game.models.single_risk_binary_tree import (
     get_xrisk_tree_shape,
     build_xrisk_tree,
     run_survival_simulation,
