@@ -4,7 +4,7 @@ from the_extinction_game.models.risk_model_interface import RiskModel
 from the_extinction_game.models.single_risk_binary_tree import run_survival_simulation
 
 
-class DisjoinEventsConstantRiskModel(RiskModel):
+class DisjointEventsConstantRiskModel(RiskModel):
     """A model for simulating the survival of an entity over a number of centuries with a constant risk of extinction.
 
     Attributes:
@@ -25,10 +25,11 @@ class DisjoinEventsConstantRiskModel(RiskModel):
     def __init__(self, n_centuries: int, initial_risk: float):
         self._n_centuries = n_centuries
         self._n_branches = 1
-        self.survival = np.ndarray([n_centuries, self.n_branches])
+        self.survival = np.ndarray([self._n_centuries, self.n_branches])
         self.initial_risk = initial_risk
-        self.centuries = np.arange(1, n_centuries + 1)
-        self.century_risk = np.ndarray([self.n_centuries, self.n_branches])
+        self.centuries = np.arange(1, self._n_centuries + 1)
+        self.survival_probability_per_century = self.compute_survival_probability(
+            self.centuries)
 
     @property
     def n_centuries(self):
@@ -48,7 +49,7 @@ class DisjoinEventsConstantRiskModel(RiskModel):
         Returns:
         np.ndarray: An array containing the survival probability after the given number of centuries.
         """
-        return (1 - self.initial_risk) ** century
+        return (1 - self.initial_risk)
 
     def run_simulation(self):
         """
@@ -63,19 +64,26 @@ class DisjoinEventsConstantRiskModel(RiskModel):
             - survival (numpy.ndarray): An array indicating survival (1) or extinction (0) for each century.
             - extinction_century (int): The century in which extinction occurs, or -1 if survival continues.
         """
-        # First compute the risk for all relevant centuries
-        self.century_risk = self.compute_survival_probability(self.centuries)
-
         # Generate random numbers for each century
         dice_throw = np.random.random(self.n_centuries)
 
         # Mark "survived" centuries
-        survival = (dice_throw < self.century_risk).astype(int)
+        survival = (
+            dice_throw < self.survival_probability_per_century).astype(int)
 
-        # The appearance of the first zero means extinction
-        zeros = np.where(survival == 0)[0]
+        # Find extinction events, by default assume no extinction
         extinction_century = -1
-        if zeros.size > 0:
-            extinction_century = zeros[0]
 
-        return survival, extinction_century
+        # The appearance of the first zero means extinction, find it
+        zeros = np.where(survival == 0)[0]
+
+        # If zeros is an array with size > 0, then at least one extinction event occurred, fetch it
+        if zeros.size > 0:
+            extinction_century = zeros[0] + 1
+
+        # If there was an extinction event, set the survival status to zero for all subsequent centuries
+        if extinction_century != -1:
+            survival[extinction_century:] = 0
+
+        # Reshape survival to match the shape (n_centuries, n_branches)
+        return survival.reshape(self._n_centuries, self._n_branches), extinction_century

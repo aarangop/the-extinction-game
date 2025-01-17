@@ -48,5 +48,24 @@ def test_run_extinction_centuries(experiment):
     assert np.allclose(extinction_centuries, expected_extinction_centuries)
 
 
+def test_run_results_not_none(experiment):
+    results, extinction_centuries = experiment.run()
+    assert results is not None
+    assert extinction_centuries is not None
+
+
+def test_run_extinction_centuries_shape(experiment):
+    results, extinction_centuries = experiment.run()
+    assert extinction_centuries.shape == (
+        experiment.n_simulations, experiment.model.n_branches)
+
+
+def test_run_extinction_centuries_values(experiment):
+    results, extinction_centuries = experiment.run()
+    expected_extinction_centuries = np.zeros(
+        (experiment.n_simulations, experiment.model.n_branches))
+    assert np.allclose(extinction_centuries, expected_extinction_centuries)
+
+
 if __name__ == '__main__':
     pytest.main([__file__])

@@ -10,4 +10,3 @@ scikit-learn
 scipy
 nbconvert
 pandoc
-pytest

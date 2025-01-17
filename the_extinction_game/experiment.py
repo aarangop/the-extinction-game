@@ -32,52 +32,22 @@ class Experiment:
             - Array of extinction centuries for each simulation
         """
         results = np.zeros(
-            (self.model.n_branches, self.model.n_centuries))
+            (self.model.n_centuries, self.model.n_branches))
         self.extinction_centuries = np.ndarray(
-            (self.n_simulations, self.model.n_centuries))
+            (self.n_simulations, self.model.n_branches))
 
         # Run simulations
         for i in range(self.n_simulations):
             # Run individual simulation
             partial_results, extinction_centuries = self.model.run_simulation()
             # Add up the results
-            results = np.add(results, partial_results)
+            results += partial_results
             # Store the extinction centuries
             self.extinction_centuries[i] = extinction_centuries
 
         # Calculate the ratio of surviving simulations
         self.results = results / self.n_simulations
         return self.results, self.extinction_centuries
-
-    def get_statistics(self) -> dict:
-        """
-        Calculate statistics from the experiment results.
-
-        Returns:
-            Dictionary containing various statistics:
-            - mean_extinction_time: Average time to extinction
-            - survival_rate: Percentage of simulations without extinction
-            - extinction_percentiles: Various percentiles of extinction times
-        """
-        if self.extinction_centuries is None:
-            raise ValueError("Must run experiment before getting statistics")
-        # calculate survival rates as a percentage
-        survival_rate = self.results/self.n_simulations
-
-        # Calculate statistics
-        mean_extinction_century = np.mean(self.extinction_centuries == -1)
-
-        percentiles = [25, 50, 75, 95]
-        extinction_percentiles = np.percentile(
-            self.extinction_centuries[self.extinction_centuries != -1],
-            percentiles
-        )
-
-        return {
-            "mean_extinction_time": mean_extinction_century,
-            "survival_rate": survival_rate,
-            "extinction_percentiles": dict(zip(percentiles, extinction_percentiles))
-        }
 
     def get_stats(self):
         """
@@ -127,74 +97,72 @@ class Experiment:
 
         return stats_df, survival_by_century
 
-    def plot_results(self) -> plt.Figure:
+    def plot_survival_rate(self, ax: plt.Axes = None) -> Tuple[plt.Figure, plt.Axes]:
         """
-        Create visualization of multi-risk simulation results.
-
-        Parameters:
-        -----------
-        results : np.ndarray
-            Simulation results array of shape (n_centuries, n_branches)
-        extinction_centuries : np.ndarray
-            Array of extinction centuries for each simulation run and branch
-
+        Plots the survival rate over time.
+        This method creates a figure with a single subplot that shows the average survival rate over time,
+        along with the 25th to 75th percentile range.
         Returns:
-        --------
-        plt.Figure
-            Figure containing multiple plots analyzing the results
+            Tuple[plt.Figure, plt.Axes]: A tuple containing the figure and axes objects of the plot.
         """
-
-        # Create figure with multiple subplots
-        fig = plt.figure(figsize=(12, 12))
-
-        # Make GridSpec to adjust layout
-        gs = fig.add_gridspec(2, 2)
+        fig = None
+        if ax is None:
+            fig = plt.figure(figsize=(12, 6))
+            ax = fig.add_subplot(1, 1, 1)
 
         # Get statistics
         stats_df, survival_by_century = self.get_stats()
 
         # 1. Average Survival Rate Over Time (covering two columns)
         # Make the first ax span two columns
-        ax0 = fig.add_subplot(gs[0, :])
-        ax0.fill_between(survival_by_century.century,
-                         survival_by_century.q25_survival,
-                         survival_by_century.q75_survival,
-                         alpha=0.3, color='blue', label='25-75 percentile')
-        ax0.plot(survival_by_century.century,
-                 survival_by_century.avg_survival,
-                 'b-', label='Mean survival')
-        ax0.set_title('Survival Rate Over Time')
-        ax0.set_xlabel('Century')
-        ax0.set_ylabel('Survival Rate')
-        ax0.legend()
+        ax.fill_between(survival_by_century.century,
+                        survival_by_century.q25_survival,
+                        survival_by_century.q75_survival,
+                        alpha=0.3, color='blue', label='25-75 percentile')
+        ax.plot(survival_by_century.century,
+                survival_by_century.avg_survival,
+                'b-', label='Mean survival')
+        ax.set_title('Survival Rate Over Time')
+        ax.set_xlabel('Century')
+        ax.set_ylabel('Survival Rate')
+        ax.legend()
 
-        # 2. Extinction Century Distribution
-        ax1 = fig.add_subplot(gs[1, 0])
+        if fig is not None:
+            return fig, ax
+
+        return ax
+
+    def plot_extinction_century_histogram(self, ax: plt.Axes = None) -> plt.Figure:
+        """
+        Figure containing a histogram of extinction centuries with median and mean lines.
+        """
+
+        # Get data
+        _, extinct_centuries = self.get_stats()
+        fig = None
+        if ax is None:
+            fig = plt.figure(figsize=(12, 6))
+            ax = fig.add_subplot(1, 1, 1)
+
         extinct_centuries = self.extinction_centuries[self.extinction_centuries != -1]
         if len(extinct_centuries) > 0:
             sns.histplot(data=extinct_centuries,
-                         bins=30, ax=ax1, stat='count')
-            ax1.axvline(np.median(extinct_centuries), color='r', linestyle='--',
-                        label=f'Median: {np.median(extinct_centuries):.1f}')
-            ax1.axvline(np.mean(extinct_centuries), color='g', linestyle='--',
-                        label=f'Mean: {np.mean(extinct_centuries):.1f}')
-        ax1.set_title('Distribution of Extinction Centuries')
-        ax1.set_xlabel('Century')
-        ax1.set_ylabel('Count')
-        ax1.legend()
-
-        # 3. Final State Distribution (using density)
-        ax2 = fig.add_subplot(gs[1, 1])
-        final_state = self.results[-1]
-        sns.histplot(final_state, bins=2, ax=ax2,
-                     stat='count', discrete=True)
-        ax2.set_title('Distribution of Final States')
-        ax2.set_xlabel('State (0=Extinct, 1=Survived)')
-        ax2.set_ylabel('Count')
-        ax2.set_xticks([0, 1])
+                         bins=30, ax=ax, stat='count')
+            ax.axvline(np.median(extinct_centuries), color='r', linestyle='--',
+                       label=f'Median: {np.median(extinct_centuries):.1f}')
+            ax.axvline(np.mean(extinct_centuries), color='g', linestyle='--',
+                       label=f'Mean: {np.mean(extinct_centuries):.1f}')
+        ax.set_title('Distribution of Extinction Centuries')
+        ax.set_xlabel('Century')
+        ax.set_ylabel('Count')
+        ax.legend()
 
         plt.tight_layout()
-        return fig
+
+        if fig is not None:
+            return fig, ax
+
+        return ax
 
     def estimate_runtime_requirements():
         pass
